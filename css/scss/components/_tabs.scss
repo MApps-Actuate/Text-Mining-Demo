@@ -1,0 +1,79 @@
+//Tab ontrol
+.r-tabs {
+    position: relative;
+
+    .r-tabs-nav {
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.10);
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        .r-tabs-tab {
+            display: inline-block;
+            margin: 0;
+            list-style: none;
+            height: 3rem;
+            position: relative;
+
+            .r-tabs-anchor {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                color: #333333;
+                line-height: 3rem;
+                text-decoration: none;
+                font-size: 1rem;
+                border-bottom: 4px solid transparent;
+                margin-right: 1.5rem;
+            }
+
+            &:first-child .r-tabs-anchor {
+                margin-left: 1.5rem;
+            }
+    
+            &.r-tabs-state-active .r-tabs-anchor {
+                border-bottom: 4px solid $tab-indicator;
+            }
+
+        }
+
+    }
+
+    .r-tabs-accordion-title {
+        display: block;
+
+        @include tablet {
+            display: none;
+        }
+
+        .r-tabs-anchor {
+            display: block;
+            padding: 1rem 1.5rem 1rem 1.5rem;
+            background-color: $accordion;
+            color: $tab-text;
+            text-decoration: none;
+            font-size: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.10);
+        }
+
+        &.r-tabs-state-active .r-tabs-anchor {
+            background-color: #FFFFFF;
+            color: $tab-text;
+            font-weight: $font-bold;
+            border-left: 4px solid $ot-indigo;
+            padding: 1rem 1.5rem 1rem 1.3rem;
+        }
+
+
+    }
+
+    .r-tabs-panel {
+        padding: 1.5rem;
+        display: none;
+    }
+    
+}

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.11.0.v202007151051</property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="pTerms" id="194">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">'["Diplomacy","Security","Forces","Treaty","Military"]'</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pCounts" id="186">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">'["100","82","78","68","50"]'</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pDocID" id="193">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">xxx</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <script-data-source name="Scripted Data Source RAW" id="191"/>
+        <script-data-source name="Scripted Data Source SPLIT" id="187"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Scriped Data Set RAW" id="192">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TheTerm</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TheCount</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TheDocID</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TheTerm</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TheCount</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TheDocID</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TheTerm</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TheCount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TheDocID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Scripted Data Source SPLIT</property>
+            <method name="open"><![CDATA[currentRow = 0;]]></method>
+            <method name="fetch"><![CDATA[if (currentRow >= 1) {
+	return false;
+}
+else {
+	row["TheTerm"] = params["pTerms"].value;
+	row["TheCount"] = params["pCounts"].value;
+	row["TheDocID"] = params["pDocID"].value;
+	currentRow ++;
+	return true;
+}]]></method>
+        </script-data-set>
+        <script-data-set name="Scriped Data Set SPLIT" id="188">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TheTerm</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">TheCount</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TheDocID</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TheTerm</property>
+                    <property name="analysis">dimension</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TheCount</property>
+                    <property name="analysis">measure</property>
+                </structure>
+                <structure>
+                    <property name="columnName">TheDocID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName" key=""></text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TheTerm</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">TheCount</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TheDocID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Scripted Data Source SPLIT</property>
+            <method name="open"><![CDATA[theTerms = JSON.parse(params["pTerms"].value);
+theCounts = JSON.parse(params["pCounts"].value);
+
+currentRow = 0;
+totalRows = theTerms.length;]]></method>
+            <method name="fetch"><![CDATA[if (currentRow >= totalRows) {
+	return false;
+}
+else {
+	row["TheTerm"] = theTerms[currentRow];
+	row["TheCount"] = theCounts[currentRow];
+	row["TheDocID"] = params["pDocID"].value;
+	currentRow ++;
+	return true;
+
+}]]></method>
+        </script-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <extended-item extensionName="HTMLControl" id="4">
+            <method name="clientOnCreate"><![CDATA[var config = {
+    "attrKeys": ["title", "wordLimit", "font", "rotation"],
+    "bindings": ["wordColumn", "wordSize"],
+    "rotation": 90,
+    "wordColumn": {
+        "dataType": "string",
+        "name": "TheTerm"
+    },
+    "name": "Word Cloud",
+    "groups": ["CITY"],
+    "titleStyle": {
+        "size": "16pt",
+        "color": "RGB(51,51,51)",
+        "underline": false,
+        "bold": false,
+        "family": "lato",
+        "italic": false
+    },
+    "wordSize": {
+        "aggregateExpression": "Count",
+        "aggregationName": "TheCount",
+        "dataType": "string",
+        "name": "Number of Terms"
+    },
+    "title": "",
+    "dpi": 96,
+    "wordLimit": 50,
+    "font": "Arial"
+};
+var wordSize = config.wordSize.aggregationName;
+var seriesName = config.wordSize.name;
+var fontFamily = config.font;
+var wordColumn = config.wordColumn.name;
+var title = config.title;
+var wordLimit = wordSize;
+var degree = config.rotation;
+var titleFont = config.titleStyle.family;
+var titleSize = config.titleStyle.size;
+var titleColor = config.titleStyle.color;
+var titleDecoration=config.titleStyle.underline === true ? "underline" : "none";
+var titleFontStyle=config.titleStyle.italic === true ? "italic" : "normal";
+var titleFontWeight=config.titleStyle.bold === true? "bold":"normal";
+var dpi = config.dpi;
+var pt = 72;
+var maxFontSize = 28;
+var hasFloat = false;
+var iportalURL = actuate &amp;&amp; actuate.getDefaultIportalUrl &amp;&amp; actuate.getDefaultIportalUrl();
+titleSize = (parseFloat( titleSize.replace("pt","") ) * dpi / pt) + "px";
+var titleStyle = {
+	"color":titleColor,
+	"fontSize":titleSize,
+	"textDecoration":titleDecoration,
+	"fontStyle":titleFontStyle,
+	"fontWeight":titleFontWeight
+}
+if( titleFont !== "auto" ){
+	titleStyle["fontFamily"] = titleFont;
+}
+
+function isFloat(n){
+    return Number(n) === n &amp;&amp; n % 1 !== 0;
+}
+
+function dataTransfrom(cursor) {
+	var data = [];
+	while (cursor.hasNext()) {
+		if( data.length >= wordLimit){
+			break;
+		}
+		var dataObj = cursor.next();
+		var obj = {};
+		obj.name = dataObj[wordColumn];
+		obj.weight = dataObj[wordSize];
+		if( !hasFloat ){
+			hasFloat = isFloat( obj.weight ); 
+		}
+		if(wordColumn!=''&amp;&amp;wordColumn!='<change name>'){
+		data.push(obj);
+		}
+	}
+	if(data.length <1){
+    var obj1 = {};obj1.name = "Hello";obj1.weight = 5;
+    var obj2={};obj2.name = "world";obj2.weight = 3;
+    var obj3={};obj3.name = "normally";obj3.weight = 8;
+    var obj4={};obj4.name = "you";obj4.weight = 1;
+    var obj5={};obj5.name = "want";obj5.weight = 4;
+    var obj6={};obj6.name = "more";obj6.weight = 2;
+        var obj7={};obj7.name = "words";obj7.weight = 9;
+        var obj8={};obj8.name = "than";obj8.weight = 1;
+         var obj9={};obj9.name = "this";obj9.weight = 6;
+    data.push(obj1);data.push(obj2);data.push(obj3);data.push(obj4);
+    data.push(obj5);data.push(obj6);data.push(obj7);
+    data.push(obj8);data.push(obj9);
+    
+    }
+	return data;
+}
+
+if (this.data.rows[0][2] == 'xxx') 
+	var containerId = this.getId();
+else var containerId = this.data.rows[0][2];
+var customViz = this;
+var data = dataTransfrom(this.getDataCursor());
+
+var callback = function() {
+	Highcharts.seriesTypes.wordcloud.prototype.deriveFontSize = function(relativeWeight) {
+        return Math.floor(maxFontSize * relativeWeight) < 8 ? 8 : Math.floor(maxFontSize * relativeWeight);
+    };
+	var chart = Highcharts.chart(containerId, {
+		credits: {
+			enabled: false
+		},
+	    series: [{
+			rotation: {
+				from: 0,
+				to: degree
+			},
+	        type: 'wordcloud',
+	        colors : ["#111B58", "#2E3D98", "#4F3690", "#00B8BA", "#09BCEF", "#7E929F", "#ffdd00", "#E1E8F6","#7E929F","#09BCEF"],
+	        data: data,
+			style:{
+				fontFamily:fontFamily
+			}
+	    }],
+	    title: {
+	        text: title,
+			style:titleStyle
+	    },
+		tooltip: {
+			animation: false,
+			backgroundColor: "#fff",
+			borderRadius: 0,
+			borderColor: "#e1e1e1",
+			borderWidth: 1,
+			style: {
+				color: "#363636",
+				fontSize: "16px",
+				fontWeight: 400,
+				padding: "12px"
+			},
+            useHTML: true,
+			headerFormat: '<div style=" color:#363636;font-size: 16px;font-weight: 400;">{point.key}</div>',
+			pointFormatter:function( ){
+				if( hasFloat ){
+					//float
+					return '<div style=" font-size: 12px;font-weight: 600;margin-top: 4px;">' + seriesName + ":" + Highcharts.numberFormat(this.weight,2,'.',',') + '</div>';
+				}
+				else{
+					return '<div style=" font-size: 12px;font-weight: 600;margin-top: 4px;">' + seriesName + ":" + this.weight + '</div>';
+				}
+			}
+		}
+	});
+	if(!data || data.length === 0) {
+		actuate.report.HTML5Chart.UIHelper.showMessageBox("This word cloud visual contains no data.", chart.renderer);
+	}
+	customViz.setDelegate(chart);
+	window.setTimeout(function(){
+		customViz.setPrintReady();	
+	},500);
+}
+
+customViz.setSize = function( w, h ){
+	var _chart = customViz.getDelegate( );
+	_chart.setSize(w,h,false);
+	// 2nd deepest div from SVG.
+	_chart.renderTo.style.width = w + "px";
+	_chart.renderTo.style.height = h + "px";
+
+	// Update engine generated chart div, which is the 3rd
+	// deepest div holding SVG.
+	_chart.renderTo.parentNode.style.width = w + "px";
+	_chart.renderTo.parentNode.style.height = h + "px";
+	_chart.renderTo.parentNode.style.display = '';
+}
+var downloadURL1 = iportalURL + 'iv/html5charts/html5charts.js'; 
+head.load(downloadURL1,callback);
+]]></method>
+            <property name="height">480px</property>
+            <property name="width">100%</property>
+            <expression name="bookmark" type="javascript">"wordcloud"</expression>
+            <property name="dataSet">Scriped Data Set SPLIT</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">TheTerm</property>
+                    <text-property name="displayName">TheTerm</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TheTerm"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TheCount</property>
+                    <text-property name="displayName">TheCount</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TheCount"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">TheDocID</property>
+                    <text-property name="displayName">TheDocID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TheDocID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="displayName">Highcharts Word Cloud</property>
+        </extended-item>
+    </body>
+</report>

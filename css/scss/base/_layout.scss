@@ -1,0 +1,131 @@
+//main wrappers
+.site-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    transition: all 300ms;
+}
+
+.content-wrapper {
+    flex: 1;
+  }
+
+
+//header
+.header {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background: $header-bg;
+    z-index: 1000;
+
+    @include tablet {
+        height: 4.5rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin: 0 auto 0 auto;
+        width: 90%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    
+        @include desktop {
+            width: 1120px;
+        }
+    }
+}
+
+.logo {
+    height: 18px;
+
+    @include tablet {
+        height: 32px;
+    }
+
+}
+
+//intro
+.intro {
+    padding: 3rem 0 3rem 0;
+    background-color: $intro-bg;
+
+    &__wrapper {
+        display: flex;
+        margin: 0 auto 0 auto;
+        width: 90%;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    
+        @include desktop {
+            width: 1120px;
+        }
+    }
+
+}
+
+//results
+.results-container {
+
+    padding: 3rem 0 3rem 0;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 0 auto;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+    
+        @include desktop {
+            width: 1120px;
+        }
+    }
+
+}
+
+//footer
+.footer {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    background-color: $footer-bg;
+    border-top: 1px solid rgba(0,0,0,0.1);
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto 0 auto;
+        width: 90%;
+        align-items: center;
+        line-height: 1.5rem;
+        height: 100%;
+        padding: 1.5rem 0 1.5rem 0;
+    
+        @include desktop {
+            width: 1120px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: $hyperlink;
+        text-decoration: none;
+
+        &:hover {
+            color: $hyperlink-hover;
+        }
+    }
+
+    &__divider {
+        color: $divider;
+    }
+
+}

@@ -1,0 +1,25 @@
+//Media Query Mixins-mobile
+
+@mixin phablet {
+	@media only screen and (min-width: $phablet) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media only screen and (min-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media only screen and (min-width: $laptop) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (min-width: $desktop) {
+		@content;
+	}
+}

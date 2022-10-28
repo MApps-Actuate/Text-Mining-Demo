@@ -1,0 +1,404 @@
+<!--------------------------------------------------------->
+<!-- P L E A S E   R E A D   T H I S   B E F O R E       -->
+<!--                                                     -->
+<!-- This is a specific page for a defined language      -->
+<!-- It reuses script and php page from the root folder  -->                                              
+<!-- If you modify the link to the page, do it carefully -->
+<!--------------------------------------------------------->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+	<!-- Meta Data -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>OpenText&trade; | Magellan - Text Mining Demo</title>
+
+<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){
+				w[l]=w[l]||[];
+				w[l].push({'gtm.start':	new Date().getTime(),event:'gtm.js'});
+				var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+				f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-PGC8H5');
+	</script>
+<!-- End Google Tag Manager -->
+
+	<!-- scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../js/jquery.responsiveTabs.min.js"></script>
+	<script src="http://localhost:8888/JavaComponents/jsapi" type="text/javascript"></script>
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="../css/main.css"/>
+	<link rel="icon" href="../favicon-16x16.png"/>
+	
+	
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGC8H5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="site-wrapper">
+	<div class="content-wrapper">
+		<!-- header -->
+		<header class="header">
+			<div class="header__wrapper">
+				<!-- Logo -->
+				<img src="../img/opentext-magellan-wordmark.svg" alt="OpenText Magellan" class="logo"/>
+				
+				<!-- Main Navigation -->
+				<div class="main-nav">
+					<a href="#" class="main-nav__item main-nav__item--is-selected">Home</a>
+					<a target="_blank" href="https://blogs.opentext.com/introducing-opentext-magellan-power-ai-pre-integrated-platform-machine-assisted-decision-making/" class="main-nav__item">Hoe het werkt</a>
+				</div>
+			</div>
+		</header>
+
+
+		<!-- intro -->
+		<div class="intro">
+			<div class="intro__wrapper">
+				<!-- magellan input area -->
+				<div class="magellan-input">			
+					<h1 class="magellan-input__header">Magellan Text Mining</h1>
+					<p class="magellan-input__introduction">
+						Analyseer elke tekst uit nieuwsartikelen, documenten en meer! Voer uw tekst hieronder in en klik op "Tekst analyseren" om uw resultaten te krijgen.
+					</p>
+					<div id="truncAlert" class="alert">
+					    <div class="dismiss" aria-label="Close Truncation Alert" onClick="$('.alert').hide();">&#x1f5d9;</div>
+					    <strong>Attentie:</strong>&nbsp;&nbsp;Deze omgeving beperkt de te analyseren tekst tot 100.000
+					    tekens. Probeer het opnieuw met minder tekst.
+					</div>
+					
+					<textarea id="ntext" class="magellan-input__textarea" rows="4" cols="50" placeholder="Tekst plakken voor Magellan om te analyseren"></textarea>
+
+					<a id="analyze-now" class="magellan-input__button" href="#">Tekst analyseren</a>
+				</div>
+
+				<!-- callout -->
+				<div class="callout">
+					<img class="callout__image" src="img/intro-callout.svg" alt="Magellan text mining content analysis" >
+					<h2 class="callout__heading">Introduction</h2>
+					<p class="callout__description">
+						Ingebouwde meertalige natuurlijke taalverwerking via lichtgewicht API's maakt het moeiteloos om OpenText Magellan in elke bedrijfsoplossing te integreren
+					</p>
+					<a class="callout__button" target="_blank" href="https://blogs.opentext.com/introducing-opentext-magellan-power-ai-pre-integrated-platform-machine-assisted-decision-making/">Leer hoe het werkt</a>
+				</div><!-- end callout -->
+			</div>
+		</div>
+
+		<!-- results -->
+		<div class="results-container">
+			<div class="results-container__wrapper">
+					
+				<!-- empty state container -->
+				<div class="empty-state">
+					
+					<!-- empty state card-->
+					<div class="card">
+						<div class="empty">
+							<img class="empty__illustration" src="../img/empty-state-illustration.svg" alt="Empty state illustration">
+							<h3 class="empty__heading">Magellan heeft nog niets om over na te denkent!</h3>
+							<p class="empty__description">Deze Magellan installatie kent Nederlands. Plak uw tekst hierboven en laat Magellan hem analyseren!</p>
+						</div>
+					</div><!-- end card -->
+
+				</div><!-- end empty state container -->
+				<div class="result-state">
+				
+				<!-- summary -->
+					<div class="card">
+						<div class="summary">
+							<div class="summary__header">
+								<h2 class="summary__headline">Samenvatting van de analyse</h2>
+
+								<!-- Language -->
+								<div class="summary__language">Taal: <span class="summary__language--language-name">Dutch</span></div>
+
+								<!-- Tone -->
+								<div class="summary__tone">Algemene toon: <span class="summary__tone--negative">Negatief</span></div>
+							</div>
+
+							<div class="summary__most-popular">
+								
+								<!-- MP nouns -->
+								<div class="summary__popular-col">
+									<h3 class="summary__popular-col-heading">Meest populair...</h3>
+									<p class="summary__popular-col-csv"></p>
+								</div>
+
+								<!-- MP topics -->
+								<div class="summary__popular-col">
+										<h3 class="summary__popular-col-heading">Meest populair...</h3>
+										<p class="summary__popular-col-csv"></p>
+									</div>
+
+								<!-- MP entities -->
+								<div class="summary__popular-col">
+										<h3 class="summary__popular-col-heading">Meest populair...</h3>
+										<p class="summary__popular-col-csv"></p>
+									</div>
+							</div>
+
+
+							<div class="summary__sentiment">
+
+								<!-- Most positive sentence -->
+								<div class="summary__sentiment-col">
+									<h3 class="summary__sentiment-heading summary__sentiment-heading--positive">Meest positieve zin</h3>
+									<p class="summary__sentence"></p>
+								</div>
+
+								<!-- Most negative sentence -->
+								<div class="summary__sentiment-col">
+									<h3 class="summary__sentiment-heading summary__sentiment-heading--negative">Meest negatieve zin</h3>
+									<p class="summary__sentence"></p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- results tabs-->
+					<div class="card">
+						
+						<div class="result-tabs">
+							<!-- responsive tab nav -->
+							<div class="tab-control">
+								<ul>
+									<li><a href="#topics">Onderwerpen Samenvatting</a></li>
+									<li><a href="#entities">Entiteiten</a></li>
+									<li><a href="#concepts">Concepten</a></li>
+									<li><a href="#sentiment">Sentiment</a></li>
+								</ul>
+								
+								<!-- topics tab-->
+								<div id="topics">
+
+									<!-- tab content container -->
+									<div class="tab-topics">
+
+										<div id="wordcloud3" class="wordcloud">
+											word cloud here
+										</div>
+
+										<h2 class="tab-headingOnderwerp uitsplitsing</h2>
+
+										<div class="chart">
+											
+											<div class="chart__section">
+
+												<!-- section header row -->
+												<div class="chart__header-row">
+													<h3 class="chart__section-name">Type<span class="chart__count-badge">16</span></h3>
+													<div class="chart__col-head">Relevantie</div>
+													<div class="chart__col-head">Toon</div>
+													<div class="chart__filler"></div>
+												</div>
+
+												<!-- section data rows -->
+												<div class="chart__row">
+													<div class="chart__data-name">Naam van het onderwerp</div>
+													<div class="chart__col-relevancy">##%</div>
+													<div class="chart__col-sentiment chart__col-sentiment--positive">Positief</div>
+													<div class="chart__filler"><a class="chart__more-info" href="#"></a></div>
+												</div>
+
+												<!-- section data rows -->
+												<div class="chart__row">
+													<div class="chart__data-name">Naam van het onderwerp</div>
+													<div class="chart__col-relevancy">##%</div>
+													<div class="chart__col-sentiment chart__col-sentiment--neutral">Neutraal</div>
+													<div class="chart__filler"><a class="chart__more-info" href="#"></a></div>
+												</div>
+
+												<!-- section data rows -->
+												<div class="chart__row">
+													<div class="chart__data-name">Naam van het onderwerp</div>
+													<div class="chart__col-relevancy">##%</div>
+													<div class="chart__col-sentiment chart__col-sentiment--negative">Negatief</div>
+													<div class="chart__filler"><a class="chart__more-info" href="#"></a></div>
+												</div>
+												
+											</div><!-- end chart section -->
+
+										</div><!-- end chart -->
+
+										<div class="chart">
+												
+												<div class="chart__section">
+	
+													<!-- section header row -->
+													<div class="chart__header-row">
+														<h3 class="chart__section-name">Type<span class="chart__count-badge">16</span></h3>
+														<div class="chart__col-head">Relevantie</div>
+														<div class="chart__col-head">Toon</div>
+														<div class="chart__filler"></div>
+													</div>
+	
+													<!-- section data rows -->
+													<div class="chart__row">
+														<div class="chart__data-name">Naam van het onderwerp</div>
+														<div class="chart__col-relevancy">##%</div>
+														<div class="chart__col-sentiment chart__col-sentiment--positive">Positief</div>
+														<div class="chart__filler"><a class="chart__more-info" href="#"></a></div>
+													</div>
+	
+													<!-- section data rows -->
+													<div class="chart__row">
+														<div class="chart__data-name">Naam van het onderwerp</div>
+														<div class="chart__col-relevancy">##%</div>
+														<div class="chart__col-sentiment chart__col-sentiment--neutral">Neutraal</div>
+														<div class="chart__filler"><a class="chart__more-info" href="#"></a></div>
+													</div>
+	
+													<!-- section data rows -->
+													<div class="chart__row">
+														<div class="chart__data-name">Naam van het onderwerp</div>
+														<div class="chart__col-relevancy">##%</div>
+														<div class="chart__col-sentiment chart__col-sentiment--negative">Negatief</div>
+														<div class="chart__filler"><a class="chart__more-info" href="#"></a></div>
+													</div>
+													
+												</div><!-- end chart section -->
+	
+											</div><!-- end chart -->
+
+											<div class="chart">
+													
+													<div class="chart__section">
+		
+														<!-- section header row -->
+														<div class="chart__header-row chart__header-row--no-results">
+															<h3 class="chart__section-name">Type<span class="chart__count-badge">0</span></h3>
+															<div class="chart__col-head">Relevantie</div>
+															<div class="chart__col-head">Toon</div>
+															<div class="chart__filler"></div>
+														</div>
+														
+													</div><!-- end chart section -->
+		
+												</div><!-- end chart -->
+
+									</div><!-- end tab content container -->
+
+								</div><!-- end topics tab -->
+
+
+								<!-- entities tab -->
+								<div id="entities">
+								
+									<!-- tab content container -->
+									<div class="tab-entities">
+											<div id="wordcloud" class="wordcloud">
+											word cloud here</div>
+									</div><!-- end tab content container -->
+
+								</div><!-- end entities tab -->
+
+
+								<!-- concepts tab-->
+								<div id="concepts">
+									
+									<!-- tab content container -->
+									<div class="tab-concepts">
+										<div id="wordcloud2" class="wordcloud">
+											word cloud here
+										</div>
+									</div><!-- end tab content container -->
+
+								</div><!-- end concepts tab -->
+
+
+								<!-- sentiment tab-->
+								<div id="sentiment">
+									
+									<!-- tab content container -->
+									<div class="tab-sentiment">
+										<div id="summarypies" class="wordcloud">
+											word cloud here
+										</div>
+									</div><!-- end tab content container -->
+
+								</div><!-- end sentiment tab -->
+
+
+								<!-- concepts tab-->
+								<div id="article-summarizer">
+									
+									<!-- tab content container -->
+									<div class="tab-article-summarizer">
+
+										<!-- Summary -->
+										<div class="summarizer">
+											<h2 class="summarizer__heading">Magellan artikel samenvatting</h2>
+											<p class="summarizer__description">OpenText Magellan kan grote hoeveelheden tekst analyseren en distilleren tot een korte samenvatting.</p>
+											<p class="summarizer__summary">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+											</p>
+										</div><!-- end summary -->
+
+										<!-- Stats -->
+										<div class="summarizer-stats">
+
+											<!-- Max number of sentences -->
+											<div class="summarizer-stats__stat">
+													<div class="summarizer-stats__stat-name">Maximum aantal zinnen:</div>
+													<div class="summarizer-stats__stat-value">5</div>
+											</div>
+
+											<!-- Max percent of input -->
+											<div class="summarizer-stats__stat">
+													<div class="summarizer-stats__stat-name">Maximumpercentage van de ingevoerde tekst:</div>
+													<div class="summarizer-stats__stat-value">10%</div>
+											</div>
+
+											<!-- Type of content -->
+											<div class="summarizer-stats__stat">
+													<div class="summarizer-stats__stat-name">Type inhoud:</div>
+													<div class="summarizer-stats__stat-value">Nieuws</div>
+											</div>
+
+										</div><!-- end stats -->
+									</div><!-- tab content container -->
+								</div>
+
+							</div><!-- end responsive tab control -->
+						</div><!-- end results tabs -->
+					</div><!-- end results -->
+				
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div><!-- end content wrapper -->
+
+
+
+	<!-- footer -->
+	<footer class="footer">
+
+		<div class="footer__wrapper">
+			&copy; Copyright 2022 OpenText Corp. All rights reserved.&nbsp;&nbsp;<a class="footer__link" href="https://www.opentext.com/who-we-are/copyright-information/site-privacy" target="_blank">Privacybeleid</a>&nbsp;&nbsp;<span class="footer__divider">|</span>&nbsp;&nbsp;<a class="footer__link" href="https://www.opentext.com/who-we-are/copyright-information/site-cookies-information" target="_blank">Cookiebeleid</a>
+		</div>
+
+	</footer>
+
+</div><!-- end site wrapper -->
+
+<!-- load js functions-->
+<script src="../js/functions.js"></script>
+
+</body>
+
+</html>

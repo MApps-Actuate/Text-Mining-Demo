@@ -1,0 +1,503 @@
+.card {
+    width: 100%;
+    flex-basis: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15), 0px 0px 0px rgba(0, 0, 0, 0.05);
+    transition: all 300ms;
+    margin-bottom: 1.5rem;
+
+    &.card--is-hidden {
+        display: none;
+    }
+}
+
+//empty state
+.empty-state {
+    width: 100%;
+    transition: all 400ms;
+    margin-left: 0;
+
+    &--is-hidden {
+        margin-left: -200vw;
+    }
+
+    &--is-none {
+        display: none;
+    }
+}
+//empty state contents
+.empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 1.5rem 3rem 1.5rem;
+
+    &__illustration {
+        margin-bottom: 1.5rem;
+    }
+
+    &__heading {
+        color: $headline;
+        font-size: 1.25rem;
+        text-align: center;
+        line-height: 1.5rem;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    &__description {
+        color: $headline;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+//result state
+.result-state {
+    display: none;
+    width: 100%;
+    transition: all 400ms;
+    margin-right: -200vw;
+
+    &--is-block {
+        display: block;
+    }
+
+    &--is-visible {
+        margin-right: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+//result state contents below
+
+
+//summary card
+.summary {
+    padding: 1.5rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-weight: $font-bold;
+        line-height: 1.5rem;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(0,0,0,0.10);
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__headline {
+        flex-basis: calc(33% - 0.75rem);
+        font-size: 1.25rem;
+        color: $headline;
+        margin: 0 0 1.5rem;
+        padding: 0;
+
+        @include tablet {
+            margin: 0 0 0 0;
+        }
+    }
+
+    &__language {
+        flex-basis: calc(33% - 0.75rem);
+
+        &--language-name {
+            color: $ot-teal;
+        }
+    }
+
+    &__tone {
+        flex-basis: calc(33% - 0.75rem);
+
+        &--negative {
+            color: $negative;
+        }
+
+        &--positive {
+            color: $positive;
+        }
+
+        &--neutral {
+            color: $neutral;
+        }
+    }
+
+    &__most-popular {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 1.5rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(0,0,0,0.10);
+
+        @include tablet {
+            flex-direction: row; 
+        }
+    }
+
+    &__popular-col {
+        flex-basis: calc(33% - 0.75rem);
+        margin-bottom: 0.75rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__popular-col-heading {
+        font-size: 1rem;
+        font-weight: $font-bold;
+        margin: 0;
+        padding: 0;
+
+        @include tablet {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    
+    &__popular-col-csv {
+        margin: 0 0 0 0;
+        padding: 0;
+
+        @include tablet {
+            margin: 0 0 0.75rem; 
+        }
+    }
+
+    &__sentiment {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 1.5rem;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__sentiment-col {
+        flex-basis: calc(50% - 0.75rem);
+    }
+
+    &__sentiment-heading {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+
+        &--negative {
+            color: $negative;
+        }
+
+        &--positive {
+            color: $positive;
+        }
+
+    }
+
+    &__sentence {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+//results stat tab content
+
+
+
+//charts
+
+.wordcloud {
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.10);
+    margin-bottom: 1.5rem;
+    min-height: 15rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-heading {
+    font-size: 1.25rem;
+    font-weight: $font-bold;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: $headline;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+
+    font-size: 0.875rem;
+
+    @include tablet {
+        font-size: 1rem;
+    }
+
+    &__header-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 1.5rem;
+        background-color: $ot-cloud;
+        height: 2.5rem;
+        padding: 0 1.5rem 0 1.5rem;
+        font-weight: $font-bold;
+        text-align: left;
+
+        &--no-results {
+            opacity: 0.4;
+        }
+
+    }
+
+    &__section-name {
+        font-size: 0.875rem;
+        margin: 0 0 0.75;
+        padding: 0;
+
+        @include phablet {
+            width: calc(30% - 0.75rem);
+        }
+
+        @include tablet {
+            width: calc(66% - 0.75rem);
+        }
+    }
+
+    &__count-badge {
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: $ot-indigo;
+        color: #FFFFFF;
+        border-radius: 50%;
+        margin-left: 0.5rem;
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: normal;
+        line-height: 1.5rem;
+
+    }
+
+    &__col-head {
+        display: none;
+        color: rgba(0, 0, 0, 0.5);
+        width: calc(11% - 0.75rem);
+
+        @include phablet {
+            display: block;
+        }
+    }
+
+    &__filler {
+        display: none;
+        width: calc(5% - 0.75rem);
+        text-align: right;
+
+        @include phablet {
+            display: block;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        border-bottom: 1px solid rgba(0,0,0,0.10);
+
+        @include phablet {
+            justify-content: space-between;
+        }
+    }
+
+    &__data-name {
+
+        margin-right: 0.75rem;
+
+        @include phablet {
+            width: calc(30% - 0.75rem);
+        }
+
+        @include tablet {
+            width: calc(66% - 0.75rem);
+        }
+    }
+
+    &__col-relevancy {
+        margin-right: 0.75rem;
+
+        @include phablet {
+            width: calc(11% - 0.75rem);
+            margin-right: 0;
+        }
+    }
+
+    &__more-info {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url('../img/info-sprite.svg');
+        background-position: left top;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-position: left bottom;
+        }
+    }
+
+    &__col-sentiment {
+        margin-right: 0.75rem;
+        font-weight: $font-bold;
+
+        @include phablet {
+            width: calc(11% - 0.75rem);
+            margin-right: 0;
+        }
+
+        &--positive {
+           color: $positive; 
+        }
+
+        &--negative {
+            color: $negative; 
+         }
+
+         &--neutral {
+            color: $neutral; 
+         }
+
+    }
+}
+
+/*
+<div class="chart">
+											
+<h2 class="chart__heading">Topic breakdown</h2>
+
+<div class="chart__section">
+
+    <!-- section header row -->
+    <div class="chart__header-row">
+        <h3 class="chart__section-name">Type</h3>
+        <div class="chart__col-head">Relevancy</div>
+        <div class="chart__col-head">Tone</div>
+        <div class="chart__filler"></div>
+    </div>
+
+    <!-- section data rows -->
+    <div class="chart__row">
+        <div class="chart__data-name">Topic name</div>
+        <div class="chart__col-relevancy">##%</div>
+        <div class="chart__col-sentiment chart__col-sentiment--positive">Positive</div>
+        <a class="chart__more-info"></a>
+
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//article summarizer
+
+.tab-article-summarizer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+}
+
+
+.summarizer {
+    width: 100%;
+
+    @include tablet {
+        width: calc(70% - 0.75rem);
+    }
+
+    &__heading {
+        font-size: 1.25rem;
+        color: $headline;
+        line-height: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__summary {
+        background-color: lighten($ot-cloud, 5%);
+        padding: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-style: italic;
+    }
+
+}
+
+.summarizer-stats {
+    width: 100%;
+
+    @include tablet {
+        width: calc(30% - 0.75rem);
+    }
+
+    &__stat {
+        padding: 0.75rem 0 0.75rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.10);
+        line-height: 2rem;
+
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    &__stat-name {
+        font-weight: $font-bold;
+    }
+
+    &__stat-value {
+        font-size: 2rem;
+        font-weight: $font-bold;
+        color: $stat;
+    }
+
+}

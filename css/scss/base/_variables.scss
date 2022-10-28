@@ -1,0 +1,50 @@
+//Typography
+$font-stack: "OpenTextSans", Helvetica, Arial, sans-serif;
+$base-font-size: 1em;
+$base-line-height: 1.5em;
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 700;
+
+//colours
+	//Primary
+	$ot-indigo: #2E3D98;
+	$ot-navy: #111B58;
+
+	//Secondary
+	$ot-plum: #4F3690;
+	$ot-teal: #00B8BA;
+	$ot-light-blue: #09BCEF;
+	$ot-steel: #7E929F;
+	$ot-cloud: #E1E8F6;
+	$light-grey: #F5F5F5;
+	$med-grey: #777777;
+
+//Page elements
+$header-bg: $ot-navy;
+$headline: $ot-indigo;
+$results-bg: $ot-cloud;
+$intro-bg: #FFFFFF;
+$body-text: #333333;
+$card-bg: #FFFFFF;
+$primary-button: $ot-indigo;
+$callout-bg: $light-grey;
+$negative: #EC7171;
+$positive: #30C916;
+$neutral: $ot-steel;
+$main-nav-accent: $ot-light-blue;
+$footer-bg: $light-grey;
+$hyperlink: $ot-indigo;
+$hyperlink-hover: $ot-light-blue;
+$divider: $med-grey;
+$tab-text: #333333;
+$tab-indicator: $ot-indigo;
+$accordion: #FFF;
+$stat: $ot-teal;
+
+//Media Queries:
+$phablet: 480px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1120px;
+

@@ -1,0 +1,65 @@
+<svg width="24" height="48" viewBox="0 0 24 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g data-name="Canvas" transform="translate(-5570 159)" fill="none">
+<g data-name="info-sprite">
+<g data-name="Group 3">
+<g data-name="Ellipse 2">
+<g stroke-width="2" transform="translate(5570 -159)">
+<circle cx="12" cy="12" r="11" stroke="#979ECB"/>
+</g>
+</g>
+<g data-name="Group 2">
+<g data-name="Line 2">
+<g stroke-width="2" stroke-linecap="round" transform="translate(5579 -141)">
+<line x1="1" y1="-1" x2="5" y2="-1" stroke="#979ECB"/>
+</g>
+</g>
+<g data-name="Line 2.1">
+<g stroke-width="2" stroke-linecap="round" transform="matrix(0 1 -1 0 5581.25 -149)">
+<line x1="1" y1="-1" x2="7" y2="-1" stroke="#979ECB"/>
+</g>
+</g>
+<g data-name="Line 2.2">
+<g stroke-width="2" stroke-linecap="round" transform="translate(5579 -147)">
+<line x1="1" y1="-1" x2="2.75" y2="-1" stroke="#979ECB"/>
+</g>
+</g>
+</g>
+<g data-name="Ellipse 3">
+<g transform="translate(5581 -153)">
+<circle cx="1" cy="1" r="1" fill="#979ECB"/>
+</g>
+</g>
+</g>
+<g data-name="Group 3">
+<g data-name="Ellipse 2">
+<g stroke-width="2" transform="translate(5570 -135)">
+<circle cx="12" cy="12" r="11" stroke="#2E3D98"/>
+</g>
+</g>
+<g data-name="Group 2">
+<g data-name="Line 2">
+<g stroke-width="2" stroke-linecap="round" transform="translate(5579 -117)">
+<line x1="1" y1="-1" x2="5" y2="-1" stroke="#2E3D98"/>
+</g>
+</g>
+<g data-name="Line 2.1">
+<g stroke-width="2" stroke-linecap="round" transform="matrix(0 1 -1 0 5581.25 -125)">
+<line x1="1" y1="-1" x2="7" y2="-1" stroke="#2E3D98"/>
+</g>
+</g>
+<g data-name="Line 2.2">
+<g stroke-width="2" stroke-linecap="round" transform="translate(5579 -123)">
+<line x1="1" y1="-1" x2="2.75" y2="-1" stroke="#2E3D98"/>
+</g>
+</g>
+</g>
+<g data-name="Ellipse 3">
+<g transform="translate(5581 -129)">
+<circle cx="1" cy="1" r="1" fill="#2E3D98"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+
