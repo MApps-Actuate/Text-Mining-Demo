@@ -27,7 +27,7 @@
 		var reqOps = new actuate.RequestOptions( );
 		reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
 		reqOps.setCustomParameters({});
-		actuate.initialize( 'http://localhost:8888/JavaComponents/', reqOps, null,null, afterInit, afterFailure); 
+		actuate.initialize( 'http://td-riskguard1.eastus.cloudapp.azure.com/OTMJC/', reqOps, null,null, afterInit, afterFailure); 
 	} else {
 		afterInit()
 	};
