@@ -41,7 +41,6 @@
 	
   	function afterInit(){
 		//alert("initialize succeeded!");
-
 		if (typeof viewer1 != 'undefined') {
 			viewer1.cleanup();
 			viewer2.cleanup();

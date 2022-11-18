@@ -5,12 +5,14 @@ function process($lang) {
     $analyze_concept, $analyze_entity, $analyze_category, $analyze_sentiment, $analyze_summary;
 
 
+
 	if ($_REQUEST['op'] == 'AnalyzeText') {
         $text_to_analyze = $_REQUEST['text_to_analyze'];
         $configuration = $_REQUEST['configuration'];
-			
 
-		$show_results=true;
+		
+
+ 		$show_results=true;
 
 // Step1 - Detect Language
         $language_response_data = detect_language($text_to_analyze, $lang);
@@ -64,7 +66,7 @@ function detect_language($text_to_analyze, $forced_language) {
 
     if ($forced_language == "") {
         $data = " <Nserver Version='4.0'>
-                <NSTEIN_Text>".$text_to_analyze."</NSTEIN_Text>"; 
+                <NSTEIN_Text><![CDATA[".$text_to_analyze."]]></NSTEIN_Text>"; 
         $data .= "  <Methods>
                         <languagedetector>
                             <Mode>text</Mode>
@@ -151,22 +153,22 @@ function generate_request($lang) {
     global $text_to_analyze, $analyze_concept, $analyze_entity, $analyze_category, $analyze_sentiment, $analyze_summary;
 
     $header = " <Nserver Version='4.0'>
-                <NSTEIN_Text>".$text_to_analyze."</NSTEIN_Text>
+                <NSTEIN_Text><![CDATA[".$text_to_analyze."]]></NSTEIN_Text>
 				<LanguageID>".$lang."</LanguageID>";
 	
     $profile = "<Methods>";
 
     if ($analyze_concept) {                
         $profile .= "<nconceptextractor>
-                        <Mode>NCONCEPT</Mode>
-                        <ComplexConcepts>
-                            <RelevancyLevel>FIRST</RelevancyLevel>
-                            <NumberOfComplexConcepts>10</NumberOfComplexConcepts>
-                        </ComplexConcepts>
-                        <SimpleConcepts>
-                            <NumberOfSimpleConcepts>10</NumberOfSimpleConcepts>
-                        </SimpleConcepts>
-                        <ResultLayout>NCONCEPTEXTRACTOR</ResultLayout>
+						<ResultLayout>NCONCEPTEXTRACTOR</ResultLayout>
+						<ExcludeEntities/>
+						<SimpleConcepts>
+							<NumberOfSimpleConcepts>10</NumberOfSimpleConcepts>
+						</SimpleConcepts>
+						<ComplexConcepts>
+							<NumberOfComplexConcepts>15</NumberOfComplexConcepts>
+							<RelevancyLevel>FIRST</RelevancyLevel>
+						</ComplexConcepts>
                     </nconceptextractor>";
     };
     if ($analyze_category) {
@@ -197,6 +199,7 @@ function generate_request($lang) {
     if ($analyze_summary) {
         $profile .= "<nsummarizer>
                         <KBid>IPTC</KBid>
+						<NbSentences>5</NbSentences>
                         <Percentage>10</Percentage>
                     </nsummarizer> ";
     };

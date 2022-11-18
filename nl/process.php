@@ -286,7 +286,7 @@
 										if(count($response_data["entities_" . $groupId]) != 0){
 									?>
 										<script>myEntities+='"<?php echo addslashes($oEntity->Name);?>",';
-										myEntityRels+='"<?php echo $oEntity->RelevancyScore;?>",';
+										myEntityRels+='"<?php echo $oEntity->Frequency;?>",';
 										</script>
 										<div class="chart__row">
 											<div class="chart__data-name"><?php echo $oEntity->Name; ?></div>
@@ -355,7 +355,7 @@
 								foreach ($response_data["concepts_" . $groupId] as $oConcept) {
 								?>
 								<script>myConcepts+='"<?php echo addslashes($oConcept->Name) ;?>",';
-									myConceptRels+='"<?php echo $oConcept->Relevancy ;?>",';
+									myConceptRels+='"<?php echo $oConcept->Frequency;?>",';
 								</script>                                                         
 										 
 								<!-- section data rows -->
