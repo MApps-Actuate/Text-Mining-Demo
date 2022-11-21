@@ -1,7 +1,7 @@
     <?php  include 'process_TME.php';
 			process(''); ?>
     <?php if ($error) { ?>
-    <div class="messages error">ERROR: <?php print_r($error); ?></div>
+    <div class="messages error"><?php print_r($error); ?></div>
     <?php }?>			
 
     
@@ -16,7 +16,9 @@
     var positiveSent = "No positive sentence found.";
 </script>	
 
-<?php if ($show_results) { ?>
+<!-------------------------------------------------------->
+<!-- D I S P L A Y   R E S U L T S                      -->
+<!-------------------------------------------------------->
 <div>
 	<div class="card">
 
@@ -463,4 +465,3 @@
 	</div><!-- end responsive tab control -->
 	</div><!-- end results tabs -->
 </div>
-<?php } ?>

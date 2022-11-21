@@ -10,51 +10,42 @@ function process($lang) {
         $text_to_analyze = $_REQUEST['text_to_analyze'];
         $configuration = $_REQUEST['configuration'];
 
-		
-
- 		$show_results=true;
-
 // Step1 - Detect Language
         $language_response_data = detect_language($text_to_analyze, $lang);
 
-		if ($show_results) {
-			$analyze_concept = analyze_concept($language_response_data['languageId']);
-			$analyze_entity = analyze_entity($language_response_data['languageId']);
-			$analyze_category = analyze_category($language_response_data['languageId']);
-			$analyze_sentiment = analyze_sentiment($language_response_data['languageId']);
-			$analyze_summary = analyze_summary($language_response_data['languageId']);
+		$analyze_concept = analyze_concept($language_response_data['languageId']);
+		$analyze_entity = analyze_entity($language_response_data['languageId']);
+		$analyze_category = analyze_category($language_response_data['languageId']);
+		$analyze_sentiment = analyze_sentiment($language_response_data['languageId']);
+		$analyze_summary = analyze_summary($language_response_data['languageId']);
 
 // Step2 - Analyze Text
-			$data = generate_request($language_response_data['languageId']);
-			$response = generate_REST_call($data);
-			$response_data = new SimpleXMLElement($response);
+		$data = generate_request($language_response_data['languageId']);
+		$response = generate_REST_call($data);
+		$response_data = new SimpleXMLElement($response);
 
-			if ((string) $response_data->ErrorID != '0') {
-				$show_results=false;
-				$error = 'Error MTM Engine';
-			} else {
-				intialize_response_data();
-				
-				if ($analyze_category && $show_results) {
-					get_category($response);
-				};
-				if ($analyze_summary && $show_results) {
-				    get_summary($response);
-				};
-				if ($analyze_concept && $show_results) {
-					get_simple_concept($response);
-					get_complex_concept($response);
-				};
-				if ($analyze_sentiment && $show_results) {
-					get_sentiment($response);
-				};
-				if ($analyze_entity && $show_results) {	
-					get_entity($response);
-				};
+		if ((string) $response_data->ErrorID != '0') {
+			$error = $error.'<br>ERROR E002 : '.$response_data->ErrorDescription;
+			intialize_response_data();
+		} else {				
+			intialize_response_data();
+			if ($analyze_category) {
+				get_category($response);
+			};
+			if ($analyze_summary) {
+			    get_summary($response);
+			};
+			if ($analyze_concept) {
+				get_simple_concept($response);
+				get_complex_concept($response);
+			};
+			if ($analyze_sentiment) {
+				get_sentiment($response);
+			};
+			if ($analyze_entity) {	
+				get_entity($response);
 			};
 		};
-	} else {
-		$show_results=false;		
 	};
 };
 
@@ -62,7 +53,7 @@ function process($lang) {
 //           P H P   F U N C T I O N S
 // ***********************************************************
 function detect_language($text_to_analyze, $forced_language) {
-	global $show_results;
+	global $error;
 
     if ($forced_language == "") {
         $data = " <Nserver Version='4.0'>
@@ -77,9 +68,14 @@ function detect_language($text_to_analyze, $forced_language) {
         $response = generate_REST_call($data);   
 		$response_data = new SimpleXMLElement($response);
 
+		$language_response_data = array();
+		
 		if ((string) $response_data->ErrorID != '0') {
-			$show_results=false;
-			return 'ERROR Language Detection';
+			$error = 'ERROR E001 : '.$response_data->ErrorDescription;
+			$language_response_data['languageId'] = 'ERROR';
+			$language_response_data['languageName']= 'ERROR';
+			$language_response_data['languageConfidenceScore'] = 0;
+			return $language_response_data;
 		};	
 
 		$Language = $response_data->Results->languagedetector->Languages->Language;
@@ -212,7 +208,7 @@ function generate_request($lang) {
 
 function generate_REST_call($data) {
 	// API URL to send data
-	$url = "http://td-riskguard1.eastus.cloudapp.azure.com/rs/v2";
+	$url = "http://vm-sctrain03.westeurope.cloudapp.azure.com:8240/rs/v2";
 
 	// curl initiate
 	$ch = curl_init();
@@ -251,8 +247,6 @@ function intialize_response_data() {
 	$response_data['entities_ON'] = array();
 	$response_data['entities_GL'] = array();
 	$response_data['entities_PN'] = array();
-	$response_data['entities_TM'] = array();
-	$response_data['entities_EV'] = array();
 	$response_data['sentimentSentences']=array();
 	$response_data['sentimentSentences_positive'] = array();
 	$response_data['sentimentSentences_neutral'] = array();
@@ -467,15 +461,10 @@ function get_entity($response) {
 	fieldSort($response_data['entities_ON'],"RelevancyScore") ;
 	fieldSort($response_data['entities_GL'],"RelevancyScore") ;
 	fieldSort($response_data['entities_PN'],"RelevancyScore") ;
-	fieldSort($response_data['entities_TM'],"RelevancyScore") ;
-	fieldSort($response_data['entities_EV'],"RelevancyScore") ;		
 
 	$response_data['entities_total'] = count($response_data['entities_ON']) +
-			   count($response_data['entities_PN']) +
-			   count($response_data['entities_TM']) +
 			   count($response_data['entities_GL']) +
-			   count($response_data['entities_ON']) +
-			   count($response_data['entities_EV']);	
+			   count($response_data['entities_PN']);
 };
        
 // ****************************************
