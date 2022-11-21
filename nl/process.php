@@ -8,7 +8,7 @@
     <?php  include '../process_TME.php';
 			process('nld'); ?>
     <?php if ($error) { ?>
-    <div class="messages error">ERROR: <?php print_r($error); ?></div>
+    <div class="messages error"><?php print_r($error); ?></div>
     <?php }?>			
 
 <script>
@@ -22,9 +22,11 @@
 	var positiveSent = "Geen positieve zin gevonden.";
 </script>	
 
-<?php if ($show_results) { ?>							 
-					<div>
-    					<div class="card">
+<!-------------------------------------------------------->
+<!-- D I S P L A Y   R E S U L T S                      -->
+<!-------------------------------------------------------->														   
+<div>
+	<div class="card">
 <!-------------------------------------------------------->
 <!-- H E A D E R                                        -->
 <!-------------------------------------------------------->						
@@ -501,4 +503,3 @@
 	</div><!-- end responsive tab control -->
 	</div><!-- end results tabs -->
 </div>
-<?php } ?>
