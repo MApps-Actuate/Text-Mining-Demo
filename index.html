@@ -26,18 +26,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<script src="js/jquery.responsiveTabs.min.js"></script>
 	<!-- <script src='http://d3js.org/d3.v2.min.js'></script> 
 	<script src='js/d3.layout.cloud.js'></script> -->
-	<script src="http://td-riskguard1.eastus.cloudapp.azure.com/OTMJC/jsapi" type="text/javascript"></script>
+	<script src="http://localhost:8888/JavaComponents/jsapi" type="text/javascript"></script>
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="css/main.css"/>
-	<link rel="icon" href="/favicon-16x16.png"/>
+	<link rel="icon" href="favicon-16x16.png"/>
 	
 	
 </head>
 
 <body>
-<!-- Tech Mkt demo usage tracking stuff -->
-<span hidden><img src="https://prod-21.eastus.logic.azure.com:443/workflows/544d9b1832a44f68af07047e6658458f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=TJC41IERJcA3I7CnrSvvByHsXzffzbfDONsrpR69B9k&cloud=analytics&product=magellan&version=223&democategory=mrg&demoscenario=TextMiningEN" width="1" height="1"></span>
-<!-- end demo usage tracking stuff -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGC8H5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -57,8 +54,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				
 				<!-- Main Navigation -->
 				<div class="main-nav">
-					<a href="#" class="main-nav__item main-nav__item--is-selected">Home</a>
-					<a target="_blank" href="https://blogs.opentext.com/introducing-opentext-magellan-power-ai-pre-integrated-platform-machine-assisted-decision-making/" class="main-nav__item">How it works</a>
+					<a href="#" class="main-nav__item main-nav__item--is-selected" data-l10n-id="home">Home</a>
+					<a target="_blank" href="https://blogs.opentext.com/introducing-opentext-magellan-power-ai-pre-integrated-platform-machine-assisted-decision-making/" class="main-nav__item" data-l10n-id="main-nav__item">How it works</a>
 				</div>
 			</div>
 		</header>
@@ -73,32 +70,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<!-- magellan input area -->
 				<div class="magellan-input">
 					
-					<h1 class="magellan-input__header">Magellan Text Mining</h1>
+					<h1 class="magellan-input__header" data-l10n-id="magellan-input__header">Magellan Text Mining</h1>
 
-					<p class="magellan-input__introduction">
+					<p class="magellan-input__introduction" data-l10n-id="magellan-input__introduction">
 						Analyze any text from news articles, documents and more! Input your text below and click “Analyze Text” to get your results.
 					</p>
 					<div id="truncAlert" class="alert">
 					    <div class="dismiss" aria-label="Close Truncation Alert" onClick="$('.alert').hide();">&#x1f5d9;</div>
-					    <strong>Attention:</strong>&nbsp;&nbsp;This environment limits the text to be analyzed to 100,000
-					    characters. Please try again with less text.
+					    <span data-l10n-id="truncAlert"><strong>Attention:</strong>&nbsp;&nbsp;This environment limits the text to be analyzed to 100,000
+					    characters. Please try again with less text.</span>
 					</div>
 					
-					<textarea id="ntext" class="magellan-input__textarea" rows="4" cols="50" placeholder="Paste text for Magellan to analyze"></textarea>
+					<textarea id="ntext" class="magellan-input__textarea" rows="4" cols="50" data-l10n-id="magellan-input__textarea" data-l10n-type="placeholder" placeholder="Paste text for Magellan to analyze"></textarea>
 
-					<a id="analyze-now" class="magellan-input__button" href="#">Analyze text</a>
+					<a id="analyze-now" class="magellan-input__button" href="#" data-l10n-id="magellan-input__button">Analyze text</a>
 
 
 				</div><!-- end magellan input -->
 
 				<!-- callout -->
 				<div class="callout">
-					<img class="callout__image" src="img/intro-callout.svg" alt="Magellan text mining content analysis" >
-					<h2 class="callout__heading">Introduction</h2>
-					<p class="callout__description">
+					<img class="callout__image" data-l10n-id="intro-callout" data-l10n-type="src" src="img/intro-callout.svg" alt="Magellan text mining content analysis" >
+					<h2 class="callout__heading" data-l10n-id="callout__heading">Introduction</h2>
+					<p class="callout__description" data-l10n-id="callout__description">
 						Built-in multilingual natural language processing delivered via lightweight APIs makes it effortless to embed OpenText Magellan in any business solution
 					</p>
-					<a class="callout__button" target="_blank" href="https://blogs.opentext.com/introducing-opentext-magellan-power-ai-pre-integrated-platform-machine-assisted-decision-making/">Learn how it works</a>
+					<a class="callout__button" target="_blank" href="https://blogs.opentext.com/introducing-opentext-magellan-power-ai-pre-integrated-platform-machine-assisted-decision-making/" data-l10n-id="Learn_how_it_works">Learn how it works</a>
 				</div><!-- end callout -->
 
 
@@ -117,8 +114,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<div class="card">
 						<div class="empty">
 							<img class="empty__illustration" src="img/empty-state-illustration.svg" alt="Empty state illustration">
-							<h3 class="empty__heading">Magellan doesn't have anything to think about yet!</h3>
-							<p class="empty__description">This Magellan installation knows English, German, Spanish and French. Paste your text above and let Magellan analyze it!</p>
+							<h3 class="empty__heading" data-l10n-id="empty__heading">Magellan doesn't have anything to think about yet!</h3>
+							<p class="empty__description" data-l10n-id="empty__description">This Magellan installation knows English, German, Spanish and French. Paste your text above and let Magellan analyze it!</p>
 						</div>
 					</div><!-- end card -->
 
@@ -129,32 +126,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<div class="card">
 						<div class="summary">
 							<div class="summary__header">
-								<h2 class="summary__headline">Analysis summary</h2>
+								<h2 class="summary__headline" data-l10n-id="summary__headline">Analysis summary</h2>
 
 								<!-- Language -->
-								<div class="summary__language">Language: <span class="summary__language--language-name">English</span></div>
+								<div class="summary__language" data-l10n-id="summary__language">Language: <span class="summary__language--language-name" data-l10n-id="summary__language2">English</span></div>
 
 								<!-- Tone -->
-								<div class="summary__tone">Overall tone: <span class="summary__tone--negative">Negative</span></div>
+								<div class="summary__tone" data-l10n-id="summary__tone">Overall tone: <span class="summary__tone--negative" data-l10n-id="summary__tone--negative">Negative</span></div>
 							</div>
 
 							<div class="summary__most-popular">
 								
 								<!-- MP nouns -->
 								<div class="summary__popular-col">
-									<h3 class="summary__popular-col-heading">Most popular...</h3>
+									<h3 class="summary__popular-col-heading" data-l10n-id="summary__popular-col-heading">Most popular...</h3>
 									<p class="summary__popular-col-csv"></p>
 								</div>
 
 								<!-- MP topics -->
 								<div class="summary__popular-col">
-										<h3 class="summary__popular-col-heading">Most popular...</h3>
+										<h3 class="summary__popular-col-heading" data-l10n-id="summary__popular-col-heading">Most popular...</h3>
 										<p class="summary__popular-col-csv"></p>
 									</div>
 
 								<!-- MP entities -->
 								<div class="summary__popular-col">
-										<h3 class="summary__popular-col-heading">Most popular...</h3>
+										<h3 class="summary__popular-col-heading" data-l10n-id="summary__popular-col-heading">Most popular...</h3>
 										<p class="summary__popular-col-csv"></p>
 									</div>
 							</div>
@@ -164,13 +161,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 								<!-- Most positive sentence -->
 								<div class="summary__sentiment-col">
-									<h3 class="summary__sentiment-heading summary__sentiment-heading--positive">Most positive sentence</h3>
+									<h3 class="summary__sentiment-heading summary__sentiment-heading--positive" data-l10n-id="summary__sentiment-heading--positive">Most positive sentence</h3>
 									<p class="summary__sentence"></p>
 								</div>
 
 								<!-- Most negative sentence -->
 								<div class="summary__sentiment-col">
-									<h3 class="summary__sentiment-heading summary__sentiment-heading--negative">Most negative sentence</h3>
+									<h3 class="summary__sentiment-heading summary__sentiment-heading--negative" data-l10n-id="summary__sentiment-heading--negative">Most negative sentence</h3>
 									<p class="summary__sentence"></p>
 								</div>
 							</div>
@@ -185,10 +182,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<!-- responsive tab nav -->
 							<div class="tab-control">
 								<ul>
-									<li><a href="#topics">Topics Summary</a></li>
-									<li><a href="#entities">Entities</a></li>
-									<li><a href="#concepts">Concepts</a></li>
-									<li><a href="#sentiment">Sentiment</a></li>
+									<li><a href="#topics" data-l10n-id="topics">Topics Summary</a></li>
+									<li><a href="#entities" data-l10n-id="entities">Entities</a></li>
+									<li><a href="#concepts" data-l10n-id="concepts">Concepts</a></li>
+									<li><a href="#sentiment" data-l10n-id="sentiment">Sentiment</a></li>
 								</ul>
 								
 								<!-- topics tab-->
@@ -201,7 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 											word cloud here
 										</div>
 
-										<h2 class="tab-heading">Topic breakdown</h2>
+										<h2 class="tab-heading" data-l10n-id="topic_breakdown">Topic breakdown</h2>
 
 										<div class="chart">
 											
@@ -350,8 +347,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 										<!-- Summary -->
 										<div class="summarizer">
-											<h2 class="summarizer__heading">Magellan article summary</h2>
-											<p class="summarizer__description">OpenText Magellan has the ability to analyze and distill large amounts of textual content into a short summary.</p>
+											<h2 class="summarizer__heading" data-l10n-id="summarizer__heading">Magellan article summary</h2>
+											<p class="summarizer__description" data-l10n-id="summarizer__description">OpenText Magellan has the ability to analyze and distill large amounts of textual content into a short summary.</p>
 											<p class="summarizer__summary">
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 											</p>
@@ -362,19 +359,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 											<!-- Max number of sentences -->
 											<div class="summarizer-stats__stat">
-													<div class="summarizer-stats__stat-name">Max number of sentences:</div>
+													<div class="summarizer-stats__stat-name" data-l10n-id="summarizer-max-sentence">Max number of sentences:</div>
 													<div class="summarizer-stats__stat-value">5</div>
 											</div>
 
 											<!-- Max percent of input -->
 											<div class="summarizer-stats__stat">
-													<div class="summarizer-stats__stat-name">Max percent of input text:</div>
+													<div class="summarizer-stats__stat-name" data-l10n-id="summarizer-max-input">Max percent of input text:</div>
 													<div class="summarizer-stats__stat-value">10%</div>
 											</div>
 
 											<!-- Type of content -->
 											<div class="summarizer-stats__stat">
-													<div class="summarizer-stats__stat-name">Type of content:</div>
+													<div class="summarizer-stats__stat-name" data-l10n-id="summarizer-type-of-content">Type of content:</div>
 													<div class="summarizer-stats__stat-value">News</div>
 											</div>
 
@@ -410,6 +407,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- load js functions-->
 <script src="js/functions.js"></script>
+<script src="js/mtm-i10n.js"></script>
+<script>
+	jQuery.when( i10n_init() ).done(function() {
+		i10n_section("body");
+		})
+</script>
 
 </body>
 

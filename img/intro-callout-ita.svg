@@ -1,0 +1,190 @@
+<svg width="352" height="144" viewBox="0 0 352 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g data-name="Canvas" transform="translate(1098 3197)" fill="none">
+<g data-name="illustration/intro">
+<g data-name="Group 2.1">
+<g data-name="Ellipse">
+<g transform="translate(-923 -3185)">
+<circle cx="46.5" cy="46.5" r="46.5" fill="#E1E8F6" fill-opacity="0.7"/>
+</g>
+</g>
+<g data-name="Ellipse">
+<g transform="translate(-1079 -3133)">
+<circle cx="35.5" cy="35.5" r="35.5" fill="#E1E8F6" fill-opacity="0.3"/>
+</g>
+</g>
+<g data-name="Ellipse">
+<g transform="translate(-815 -3103)">
+<circle cx="11.5" cy="11.5" r="11.5" fill="#ABB1D6"/>
+</g>
+</g>
+<g data-name="Rectangle 4">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1063.76 -3168)">
+<use xlink:href="#path3" stroke="#09BCEF"/>
+</g>
+</g>
+<g data-name="Rectangle 5">
+<g transform="translate(-1054.48 -3155)">
+<rect width="97" height="4" rx="2" fill="#E1E8F6"/>
+</g>
+</g>
+<g data-name="Rectangle 5.1">
+<g transform="translate(-1054.48 -3143)">
+<rect width="72" height="4" rx="2" fill="#E1E8F6"/>
+</g>
+</g>
+<g data-name="Rectangle 5.2">
+<g transform="translate(-1054.48 -3133)">
+<rect width="83" height="4" rx="2" fill="#E1E8F6"/>
+</g>
+</g>
+<g data-name="Rectangle 5.3">
+<g transform="translate(-1054.48 -3121)">
+<rect width="78.8081" height="4" rx="2" fill="#E1E8F6"/>
+</g>
+</g>
+<g data-name="Group 2">
+<g data-name="Group 2">
+<g data-name="Rectangle 5.4">
+<g transform="translate(-978 -3133)">
+<use xlink:href="#path8" fill="#E1E8F6"/>
+</g>
+</g>
+<g data-name="Rectangle 5.5">
+<g transform="translate(-978 -3121)">
+<use xlink:href="#path9" fill="#E1E8F6"/>
+</g>
+</g>
+<g data-name="Group 3.1">
+<g data-name="Ellipse">
+<g mask="url(#path10_ins)" stroke-width="4" transform="translate(-979 -3136)">
+<ellipse cx="13.8" cy="13.9394" rx="13.8" ry="13.9394" stroke="#2E3D98"/>
+</g>
+</g>
+<g data-name="Line">
+<g stroke-width="2" stroke-linecap="round" transform="matrix(0.701709 0.712463 -0.701709 0.712463 -957.943 -3111.17)">
+<line x1="1" y1="-1" x2="20.2957" y2="-1" stroke="#2E3D98"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g data-name="Rectangle 7">
+<g transform="translate(-913 -3172)">
+<rect width="84" height="24" rx="12" fill="white" fill-opacity="0.5"/>
+</g>
+<g stroke-width="2" transform="translate(-910 -3172)">
+<rect x="1" y="1" width="84" height="22" rx="11" stroke="#2E3D98"/>
+</g>
+</g>
+<g data-name="Group">
+<g data-name="Vector">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-882 -3126)">
+<use xlink:href="#path14" stroke="#4F3690"/>
+</g>
+</g>
+<g data-name="Vector">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-874.54 -3131)">
+<use xlink:href="#path15" stroke="#4F3690"/>
+</g>
+</g>
+</g>
+<g data-name="Group">
+<g data-name="Vector">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-814 -3161)">
+<use xlink:href="#path16" stroke="#4F3690"/>
+</g>
+</g>
+<g data-name="Vector">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-797.04 -3166)">
+<use xlink:href="#path17" stroke="#4F3690"/>
+</g>
+</g>
+</g>
+<g data-name="Group">
+<g data-name="Vector">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-804 -3092)">
+<use xlink:href="#path18" stroke="#4F3690"/>
+</g>
+</g>
+<g data-name="Vector">
+<g stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-770.04 -3097)">
+<use xlink:href="#path19" stroke="#4F3690"/>
+</g>
+</g>
+</g>
+<g data-name="Topic">
+<g transform="translate(-913 -3176)">
+<use xlink:href="#path20" fill="#2E3D98"/>
+</g>
+</g>
+<g data-name="Rectangle 7.2">
+<g transform="translate(-918 -3103)">
+<rect width="70" height="24" rx="12" fill="white" fill-opacity="0.5"/>
+</g>
+<g stroke-width="2" transform="translate(-923 -3103)">
+<rect x="1" y="1" width="68" height="22" rx="11" stroke="#00B8BA"/>
+</g>
+</g>
+<g data-name="Entities">
+<g transform="translate(-918 -3107)">
+<use xlink:href="#path23" fill="#00B8BA"/>
+</g>
+</g>
+<g data-name="Rectangle 7.1">
+<g transform="translate(-854 -3139)">
+<rect width="94" height="24" rx="12" fill="white" fill-opacity="0.5"/>
+</g>
+<g stroke-width="2" transform="translate(-854 -3139)">
+<rect x="1" y="1" width="92" height="22" rx="11" stroke="#09BCEF"/>
+</g>
+</g>
+<g data-name="Sentiment">
+<g transform="translate(-854 -3143)">
+<use xlink:href="#path26" fill="#09BCEF"/>
+</g>
+</g>
+<g data-name="Vector">
+<g transform="translate(-950 -3159.5)">
+<use xlink:href="#path27" fill="#00B8BA"/>
+</g>
+</g>
+<g data-name="Group">
+<g data-name="Group">
+<g data-name="Vector">
+<g stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0 1 -1 0 -986 -3127)">
+<use xlink:href="#path28" stroke="#00B8BA"/>
+</g>
+</g>
+<g data-name="Group" clip-path="url(#clip0)">
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+
+<path id="path3" d="M 90.2767 0L 0 0L 0 62L 27.2598 62"/>
+<path id="path8" d="M 4 0L 13 0C 15.2091 0 17 1.79086 17 4C 17 6.20914 15.2091 8 13 8L 0 8L 4 0Z"/>
+<path id="path9" d="M 0 0L 12.5 0C 14.7091 0 16.5 1.79086 16.5 4C 16.5 6.20914 14.7091 8 12.5 8L 3.5 8L 0 0Z"/>
+<mask id="path10_ins" fill="white">
+<ellipse cx="13.8" cy="13.9394" rx="13.8" ry="13.9394"/>
+</mask>
+<path id="path14" d="M 0 0L 11.5 0"/>
+<path id="path15" d="M 0 -1.77428e-06L 5.04003 4.88372L 0 10"/>
+<path id="path16" d="M 5.52473e-07 -3.8147e-07L 21 -3.8147e-07"/>
+<path id="path17" d="M 0 -1.77428e-06L 5.04003 4.88372L 0 10"/>
+<path id="path18" d="M 0 0L 38 0"/>
+<path id="path19" d="M 0 -1.77428e-06L 5.04003 4.88372L 0 10"/>
+<text id="path20" xml:space="preserve" style="white-space: pre" font-family="Aktiv Grotesk" font-style="Bold" font-size="14" font-weight="bold" letter-spacing="0em"><tspan x="11.5146" y="21.016">Argomento</tspan></text>
+<text id="path23" xml:space="preserve" style="white-space: pre" font-family="Aktiv Grotesk" font-style="Bold" font-size="14" font-weight="bold" letter-spacing="0em"><tspan x="9.72754" y="21.016">Entità</tspan></text>
+<text id="path26" xml:space="preserve" style="white-space: pre" font-family="Aktiv Grotesk" font-style="Bold" font-size="14" font-weight="bold" letter-spacing="0em"><tspan x="12.6016" y="21.016">Sentimento</tspan></text>
+<path id="path27" d="M 0 -1C -0.552285 -1 -1 -0.552285 -1 0C -1 0.552285 -0.552285 1 0 1L 0 -1ZM 47.8 18.1C 48.1314 17.6582 48.0418 17.0314 47.6 16.7L 40.4 11.3C 39.9582 10.9686 39.3314 11.0582 39 11.5C 38.6686 11.9418 38.7582 12.5686 39.2 12.9L 45.6 17.7L 40.8 24.1C 40.4686 24.5418 40.5582 25.1686 41 25.5C 41.4418 25.8314 42.0686 25.7418 42.4 25.3L 47.8 18.1ZM 0 1C 3.01608 1 4.9935 2.25359 6.91119 4.20815C 8.88325 6.21253 10.7359 8.9263 13.4309 11.5323C 16.1162 14.1172 19.7358 16.6105 25.0535 18.0518C 30.3783 19.4798 37.4282 19.8776 47.1414 18.49L 46.8586 16.51C 37.3218 17.8724 30.5592 17.4577 25.5715 16.1201C 20.5767 14.7958 17.3838 12.5703 14.8191 10.0927C 12.2641 7.6362 10.4293 4.94372 8.33881 2.80747C 6.194 0.621415 3.73392 -1 0 -1L 0 1Z"/>
+<path id="path28" d="M 20.9788 19.2007L 21.6243 18.2244L 17.1058 13.6683C 22.5926 8.13588 27.7566 3.90522 33.5661 0C 28.4021 0.65087 19.3651 6.18327 14.2011 10.7394L 12.9101 9.76306L 11.9418 10.4139L 11.2963 9.43762C 10.9735 9.11219 7.74603 12.3665 8.06878 12.692L 9.03704 13.6683L 8.06878 14.6446L 9.03704 15.6209C 5.16402 20.8279 1.29101 26.6857 0 30.5909L 0.645503 32.869C 3.55026 27.662 8.06878 22.7805 11.9418 18.5498L 16.4603 23.1059L 17.4286 22.455L 50.672 55.9749C 51.3175 56.3003 54.2222 53.3714 53.8995 52.7205L 20.9788 19.2007Z"/>
+<clipPath id="clip0">
+<rect width="17.7513" height="5.85783" fill="white" transform="matrix(0 1 -1 0 -986.325 -3083.75)"/>
+</clipPath>
+
+</defs>
+</svg>
+

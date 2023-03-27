@@ -16,7 +16,7 @@ jQuery( document ).ready(function( $ ) {
         } else {
         	$('.alert').hide();
         }
-        var url = 'process.php?op=AnalyzeText&configuration=standard';
+        var url = 'process.php?op=AnalyzeText&configuration=standard&lang=' + (language == null ? '' : language);
         
         var posting = $.post( url, { text_to_analyze: textarea.val() } );
         

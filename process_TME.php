@@ -1,15 +1,22 @@
+<!----------------------------------------------------------->
+<!-- P L E A S E   R E A D   T H I S   B E F O R E         -->
+<!--                                                       -->
+<!-- This is a core page of the online Text-mining demo UI -->
+<!-- It is shared with the porcess.php page which can be   --> 
+<!-- language specfic                                      -->
+<!-- Depending on the language (forced or not) the         -->
+<!-- analyzing steps (concept, entity, category...) can be -->
+<!-- different from one language to the other one          -->
+<!----------------------------------------------------------->	
 <?php
 
 function process($lang) {
     global $error, $show_results, $text_to_analyze, $language_response_data, $response_data, $error, $configuration, 
     $analyze_concept, $analyze_entity, $analyze_category, $analyze_sentiment, $analyze_summary;
 
-
-
 	if ($_REQUEST['op'] == 'AnalyzeText') {
         $text_to_analyze = $_REQUEST['text_to_analyze'];
         $configuration = $_REQUEST['configuration'];
-
 // Step1 - Detect Language
         $language_response_data = detect_language($text_to_analyze, $lang);
 
@@ -21,6 +28,8 @@ function process($lang) {
 
 // Step2 - Analyze Text
 		$data = generate_request($language_response_data['languageId']);
+	// -uncomment the line below to see the the query sent to MTM	
+	//	echo '<pre>' . htmlspecialchars($data) . '</pre>';
 		$response = generate_REST_call($data);
 		$response_data = new SimpleXMLElement($response);
 
@@ -55,33 +64,33 @@ function process($lang) {
 function detect_language($text_to_analyze, $forced_language) {
 	global $error;
 
-    if ($forced_language == "") {
-        $data = " <Nserver Version='4.0'>
-                <NSTEIN_Text><![CDATA[".$text_to_analyze."]]></NSTEIN_Text>"; 
-        $data .= "  <Methods>
-                        <languagedetector>
-                            <Mode>text</Mode>
-                        </languagedetector>
-                    </Methods>       
-                </Nserver>";
+	$data = " <Nserver Version='4.0'>
+			<NSTEIN_Text><![CDATA[".$text_to_analyze."]]></NSTEIN_Text>"; 
+	$data .= "  <Methods>
+					<languagedetector>
+						<Mode>text</Mode>
+					</languagedetector>
+				</Methods>       
+			</Nserver>";
 
-        $response = generate_REST_call($data);   
-		$response_data = new SimpleXMLElement($response);
+	$response = generate_REST_call($data);   
+	$response_data = new SimpleXMLElement($response);
 
-		$language_response_data = array();
-		
-		if ((string) $response_data->ErrorID != '0') {
-			$error = 'ERROR E001 : '.$response_data->ErrorDescription;
-			$language_response_data['languageId'] = 'ERROR';
-			$language_response_data['languageName']= 'ERROR';
-			$language_response_data['languageConfidenceScore'] = 0;
-			return $language_response_data;
-		};	
+	$language_response_data = array();
+	
+	if ((string) $response_data->ErrorID != '0') {
+		$error = 'ERROR E001 : '.$response_data->ErrorDescription;
+		$language_response_data['languageId'] = 'ERROR';
+		$language_response_data['languageName']= 'ERROR';
+		$language_response_data['languageConfidenceScore'] = 0;
+		return $language_response_data;
+	};	
 
+	// Manage forced language
+	if ($forced_language == "") {
 		$Language = $response_data->Results->languagedetector->Languages->Language;
 		$language_response_data['languageId'] = (string) $Language->Id ;
 		$language_response_data['languageConfidenceScore'] = (integer) (100.0 * (float) $Language->ConfidenceScore);
-
 	} else {
 		$language_response_data['languageId'] = $forced_language ;
 		$language_response_data['languageConfidenceScore'] = 100;
@@ -93,6 +102,7 @@ function detect_language($text_to_analyze, $forced_language) {
 		'fra' => 'French',
 		'spa' => 'Spanish',
 		'por' => 'Portugese',
+		'ita' => 'Italian',
 		'zho-Hans' => 'Chinese (Simplified)',
 		'zho-Hant' => 'Chinese (Traditional)',
 		'ara' => 'Arabic',
@@ -120,12 +130,12 @@ function detect_language($text_to_analyze, $forced_language) {
 };
 
 function analyze_concept($lang) {
-    $ma = array('eng','deu','fra','spa','por','zho-Hans','ara','zho-Hant','tur','pol','rus','ces', 'und', 'nld');
+    $ma = array('eng','deu','fra','spa','por','zho-Hans','ara','zho-Hant','tur','pol','rus','ces', 'und', 'nld', 'ita');
     return in_array($lang,$ma);
 };
 
 function analyze_entity($lang) {
-    $ma = array('eng','deu','fra','spa','por','zho-Hans','ara','zho-Hant','tur','pol','rus','ces', 'und', 'nld');
+    $ma = array('eng','deu','fra','spa','por','zho-Hans','ara','zho-Hant','tur','pol','rus','ces', 'und', 'nld', 'ita');
     return in_array($lang,$ma);
 };
 
@@ -135,7 +145,7 @@ function analyze_category($lang) {
 };
 
 function analyze_sentiment($lang) {
-    $ma = array('eng','deu','fra','spa','por', 'und', 'nld');
+    $ma = array('eng','deu','fra','spa','por', 'und', 'nld', 'ita');
     return in_array($lang,$ma);
 };
 
