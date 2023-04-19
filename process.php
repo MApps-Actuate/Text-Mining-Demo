@@ -483,7 +483,6 @@
 
 
 	<script src="js/drawCharts.js"></script>	
-	<script src="js/mtm-i10n.js"></script>
 	<script>
 		jQuery.when( i10n_init() ).done(function() {
 		i10n_section("#result_container");
