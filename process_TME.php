@@ -218,7 +218,7 @@ function generate_request($lang) {
 
 function generate_REST_call($data) {
 	// API URL to send data
-	$url = "http://td-riskguard1.eastus.cloudapp.azure.com/rs/v2";
+	$url = "http://td-mag.eimdemo.com/rs1/v2";
 
 	// curl initiate
 	$ch = curl_init();
