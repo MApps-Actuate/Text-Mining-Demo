@@ -27,7 +27,7 @@
 		var reqOps = new actuate.RequestOptions( );
 		reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
 		reqOps.setCustomParameters({});
-		actuate.initialize( 'http://td-mag.eimdemo.com/OTMJC/', reqOps, null,null, afterInit, afterFailure); 
+		actuate.initialize( 'https://td-mag.eimdemo.com/OTMJC/', reqOps, null,null, afterInit, afterFailure); 
 	} else {
 		afterInit()
 	};
